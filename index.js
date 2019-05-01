@@ -17,7 +17,7 @@ const spinner = ora(' ')
 
  // question a crée
 let wpConfigDownload = {
-  path : '../wordpress',
+  path : './',
   locale : 'fr_FR',
 }
 
@@ -52,8 +52,8 @@ const config = {
   },
   git: true,
   wordpress: {
-    themePathFolder : "../wordpress/wp-content/themes",
-    basePath : "../wordpress",
+    themePathFolder : "./wp-content/themes",
+    basePath : "./",
     themesName : "starter2019",
     plugin: {
       gravity: true,
@@ -287,15 +287,15 @@ function createSendFolder() {
     username : ${wpConfigInstall.admin_user}
     password : ${wpConfigInstall.admin_password}
   `
-  if (!fs.existsSync(`../../setupforsite`)){
-    fs.mkdirSync(`../../setupforsite`);
-    if (!fs.existsSync(`../../setupforsite/.env`)){
-      fs.appendFile(`../../setupforsite/.env`, includeEnv , function (err) {
+  if (!fs.existsSync(`../setupforsite`)){
+    fs.mkdirSync(`../setupforsite`);
+    if (!fs.existsSync(`../setupforsite/.env`)){
+      fs.appendFile(`../setupforsite/.env`, includeEnv , function (err) {
         if (err) throw err;
       });
     }
-    if (!fs.existsSync(`../../setupforsite/info.txt`)){
-      fs.appendFile(`../../setupforsite/info.txt`, infoContent , function (err) {
+    if (!fs.existsSync(`../setupforsite/info.txt`)){
+      fs.appendFile(`../setupforsite/info.txt`, infoContent , function (err) {
         if (err) throw err;
         spinner.succeed('Create send file')
         installComposer()
@@ -314,7 +314,7 @@ async function installComposer() {
 }
 
 function launchWpConfig() {
-  WP.discover({path : '../wordpress'},function(WP){
+  WP.discover({path : './'},function(WP){
     downloadFunc(WP)
   });
 }
