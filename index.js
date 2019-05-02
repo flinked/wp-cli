@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const WP = require('wp-cli');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);

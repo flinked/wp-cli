@@ -1,6 +1,6 @@
 {
   "name": "cli",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,8 @@
     "inquirer": "^6.3.1",
     "ora": "^3.4.0",
     "wp-cli": "^0.0.5"
+  },
+  "bin": {
+    "flinked-wp": "./index.js"
   }
 }
