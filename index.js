@@ -209,7 +209,7 @@ function parseEnv() {
   `
   APP_ENV:=local
   APP_PREFIX:=${config.ci.dbPrefix}
-  APP_SERVERHOST:=flinked@51.68.44.225
+  APP_SERVERHOST:=${config.ci.ssh}
   LOCAL_URL:=${config.ci.local.url}
   LOCAL_HOST:=${config.ci.local.host}
   PREPROD_FOLDERNAME:=${config.ci.preprod.folderName}
