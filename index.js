@@ -112,6 +112,11 @@ const questions = [
   },
   {
     type: 'input',
+    name: 'ssh',
+    message: 'Server ssh',
+  },
+  {
+    type: 'input',
     name: 'prodUrl',
     message: 'prod url',
   },
@@ -163,6 +168,7 @@ function UserInterface() {
     config.ci.local.pass = answers.localDBPass
 
     config.ci.dbPrefix = answers.dbPrefix
+    config.ci.ssh = answers.ssh
 
     config.ci.preprod.url = answers.prodUrl
     config.ci.preprod.host = answers.prodDBHost
@@ -183,7 +189,7 @@ function parseEnv() {
   `
   APP_ENV=local
   APP_PREFIX=${config.ci.dbPrefix}
-  APP_SERVERHOST=flinked@51.68.44.225
+  APP_SERVERHOST=${config.ci.ssh}
   LOCAL_URL=${config.ci.local.url}
   LOCAL_HOST=${config.ci.local.host}
   LOCAL_DBNAME=${config.ci.local.name}
